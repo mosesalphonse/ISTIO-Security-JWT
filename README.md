@@ -31,7 +31,7 @@ d) Test and verify
  
    kubectl create ns sashvin
 
-# Deploy the workloads into the namespce
+# Deploy the workloads into the namespce and inject Envoy sidecar alongside workloads
 
     kubectl apply -f <(istioctl kube-inject -f sashquar_workload.yaml) -n sashvin
     kubectl apply -f <(istioctl kube-inject -f sleep_workload.yaml) -n sashvin
