@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: sashquar
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: sashquar
+  labels:
+    app: sashquar
+    service: sashquar
+spec:
+  ports:
+  - name: http
+    port: 8000
+    targetPort: 8080
+  selector:
+    app: sashquar
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sashquar
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sashquar
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: sashquar
+        version: v1
+    spec:
+      serviceAccountName: sashquar
+      containers:
+      - image: gcr.io/moses-286120/quarkus-knative:1
+        imagePullPolicy: IfNotPresent
+        name: sashquar
+        ports:
+        - containerPort: 8080
