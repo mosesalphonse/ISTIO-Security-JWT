@@ -102,7 +102,7 @@ d) Test and verify
 
 # Get the JWT that sets the groups claim to a list of strings: group1 and group2:
    
-   TOKEN=$(curl https://raw.githubusercontent.com/istio/istio/release-1.8/security/tools/jwt/samples/demo.jwt -s) && echo "$TOKEN" | cut -d '.' -f2 - | base64 --decode -
+   TOKEN_GROUP=$(curl https://raw.githubusercontent.com/istio/istio/release-1.8/security/tools/jwt/samples/groups-scope.jwt -s) && echo "$TOKEN_GROUP" | cut -d '.' -f2 - | base64 --decode -
     
 #Verify that a request with the JWT that includes group1 in the groups claim is allowed (HTTP status code should be 200):
 
