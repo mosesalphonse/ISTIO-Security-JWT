@@ -12,7 +12,7 @@ b) Istio Instalation (istio-1.8.1 or above)
 ### Agenda
 
 ```
-a) Secure workload with JWT Authentication
+a) Secure workload with JWT Request Authentication
 b) Secure workload with JWT Authorization Policy
 c) Secure workload with JWT Authorization Policy with claims
 d) Test and verify
