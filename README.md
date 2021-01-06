@@ -91,7 +91,7 @@ d) Test and verify
     kubectl exec "$(kubectl get pod -l app=sleep -n sashvin -o jsonpath={.items..metadata.name})" -c sleep -n sashvin -- curl "http://sashquar.sashvin:8000/knative" -s -o /dev/null -w "%{http_code}\n"
     
 ```
-## Update authorization policy 
+## Update authorization policy with Claims
 
 ```
 # Update authorization policy to also require the JWT to have a claim named groups containing the value group1:
