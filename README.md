@@ -118,3 +118,8 @@ d) Test and verify
     
     
 ```
+
+Refer the below link for custom JWT
+
+https://dzone.com/articles/origin-authentication-and-rbac-in-istio-with-custo
+
